@@ -1,0 +1,25 @@
+[*]
+[*] GTKWave Analyzer v3.3.48 (w)1999-2013 BSI
+[*] Sat Jan 18 17:28:11 2025
+[*]
+[dumpfile] "C:\Users\ymrat\OneDrive\Desktop\16point_fft\IEEE-754-Floating-points-Arithmetic-operations\32-bit multiplier\top_dump.vcd"
+[dumpfile_mtime] "Sat Jan 18 17:22:58 2025"
+[dumpfile_size] 2651
+[savefile] "C:\Users\ymrat\OneDrive\Desktop\16point_fft\IEEE-754-Floating-points-Arithmetic-operations\32-bit multiplier\waveform"
+[timestart] 0
+[size] 958 1000
+[pos] 960 7
+*-4.776692 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] multiplier_tb.
+[sst_width] 197
+[signals_width] 118
+[sst_expanded] 1
+[sst_vpaned_height] 294
+@22
+multiplier_tb.dut.in1[31:0]
+@23
+multiplier_tb.dut.in2[31:0]
+@22
+multiplier_tb.dut.final[31:0]
+[pattern_trace] 1
+[pattern_trace] 0
