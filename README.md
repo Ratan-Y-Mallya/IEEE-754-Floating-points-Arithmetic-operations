@@ -71,7 +71,7 @@ Value representation:
 1. Install a Verilog simulator like [Icarus Verilog](http://iverilog.icarus.com/).
 2. Clone this repository:
    ```bash
-   git clone <repository_url>
+   git clone <gh repo clone Ratan-Y-Mallya/IEEE-754-Floating-points-Arithmetic-operations>
    cd ieee754_arithmetic
    ```
 3. Compile and run the testbench:
