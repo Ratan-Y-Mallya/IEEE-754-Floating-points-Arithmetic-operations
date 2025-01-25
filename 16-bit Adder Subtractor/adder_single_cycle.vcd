@@ -1,0 +1,469 @@
+$date
+	Sat Jan 25 22:23:30 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_adder_single_cycle $end
+$var wire 1 ! o_res_vld $end
+$var wire 16 " o_res [15:0] $end
+$var wire 1 # Overflow $end
+$var reg 1 $ clk $end
+$var reg 16 % i_a [15:0] $end
+$var reg 16 & i_b [15:0] $end
+$var reg 1 ' i_valid $end
+$var reg 1 ( rst $end
+$scope module uut $end
+$var wire 1 $ clk $end
+$var wire 16 ) i_a [15:0] $end
+$var wire 16 * i_b [15:0] $end
+$var wire 1 ' i_valid $end
+$var wire 1 ( rst $end
+$var wire 1 + zero_ip $end
+$var wire 1 , zero_b $end
+$var wire 1 - zero_a $end
+$var wire 1 . sign_out_w $end
+$var wire 16 / res [15:0] $end
+$var wire 1 0 overflow_flag_w $end
+$var wire 5 1 new_exp_w [4:0] $end
+$var wire 14 2 mantisa_out_w [13:0] $end
+$var wire 11 3 mantisa_out [10:0] $end
+$var wire 13 4 mantisa2_w [12:0] $end
+$var wire 13 5 mantisa2_new_w [12:0] $end
+$var wire 13 6 mantisa1_w [12:0] $end
+$var wire 13 7 mantisa1_new_w [12:0] $end
+$var wire 5 8 exp_out_w [4:0] $end
+$var wire 1 9 exception_b $end
+$var wire 1 : exception_a $end
+$var reg 1 # Overflow $end
+$var reg 16 ; o_res [15:0] $end
+$var reg 1 ! o_res_vld $end
+$scope module u_addition_s $end
+$var wire 1 < sign1 $end
+$var wire 1 = sign2 $end
+$var wire 14 > mantisa_out [13:0] $end
+$var wire 13 ? mantisa2 [12:0] $end
+$var wire 13 @ mantisa1 [12:0] $end
+$var wire 13 A Mantisa_w2 [12:0] $end
+$var wire 13 B Mantisa_w1 [12:0] $end
+$upscope $end
+$scope module u_compare_and_shift $end
+$var wire 5 C exp1 [4:0] $end
+$var wire 5 D exp2 [4:0] $end
+$var wire 13 E mantisa1 [12:0] $end
+$var wire 13 F mantisa2 [12:0] $end
+$var wire 5 G exp_dif [4:0] $end
+$var reg 13 H mantisa1_new [12:0] $end
+$var reg 13 I mantisa2_new [12:0] $end
+$var reg 5 J new_exp [4:0] $end
+$upscope $end
+$scope module u_normalisation $end
+$var wire 5 K exp [4:0] $end
+$var wire 14 L mantisa [13:0] $end
+$var wire 1 M sign_bit $end
+$var wire 13 N abs_mantissa [12:0] $end
+$var reg 5 O exp_out [4:0] $end
+$var reg 11 P mantisa_out [10:0] $end
+$var reg 13 Q normalized_mantissa [12:0] $end
+$var reg 1 0 overflow_flag $end
+$var reg 1 . sign_res $end
+$var reg 5 R temp_exp [4:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b1 R
+bx Q
+b0 P
+b0 O
+b0 N
+0M
+b0 L
+b1 K
+b1 J
+b0 I
+b0 H
+b0 G
+b0 F
+b0 E
+b0 D
+b0 C
+b0 B
+b0 A
+b0 @
+b0 ?
+b0 >
+0=
+0<
+b0 ;
+0:
+09
+b0 8
+b0 7
+b0 6
+b0 5
+b0 4
+b0 3
+b0 2
+b1 1
+00
+b0 /
+0.
+1-
+1,
+1+
+b0 *
+b0 )
+1(
+0'
+b0 &
+b0 %
+0$
+0#
+b0 "
+0!
+$end
+#5000
+1$
+#10000
+0$
+0(
+#15000
+1$
+#20000
+b10010 8
+b10010 O
+b1000000000 3
+b1000000000 P
+b10010 R
+b100000000000 Q
+b100000000000 N
+b100101000000000 /
+b1100000000 A
+b100000000000 2
+b100000000000 >
+b100000000000 L
+b10100000000 B
+b1100000000 5
+b1100000000 ?
+b1100000000 I
+b10100000000 7
+b10100000000 @
+b10100000000 H
+b11000000000 4
+b11000000000 F
+0+
+b10100000000 6
+b10100000000 E
+b10010 1
+b10010 J
+b10010 K
+b1 G
+0,
+b10000 D
+0-
+b10001 C
+0$
+b100001000000000 &
+b100001000000000 *
+b100010100000000 %
+b100010100000000 )
+1'
+#25000
+1!
+b100101000000000 "
+b100101000000000 ;
+1$
+#30000
+0$
+0'
+#35000
+0!
+1$
+#40000
+0$
+#45000
+1$
+#50000
+b1100111111000000 /
+b10011 R
+b111100000000 Q
+1.
+b10011 8
+b10011 O
+b1111000000 3
+b1111000000 P
+b1111000000000 N
+1M
+b10001000000000 2
+b10001000000000 >
+b10001000000000 L
+b1110100000000 A
+1=
+0$
+b1100001000000000 &
+b1100001000000000 *
+1'
+#55000
+1!
+b1100111111000000 "
+b1100111111000000 ;
+1$
+#60000
+0$
+0'
+#65000
+0!
+1$
+#70000
+0$
+#75000
+1$
+#80000
+b1100101000000000 /
+b10010 R
+b100000000000 Q
+b10010 8
+b10010 O
+b1000000000 3
+b1000000000 P
+b100000000000 N
+b11100000000000 2
+b11100000000000 >
+b11100000000000 L
+b1101100000000 B
+1<
+0$
+b1100010100000000 %
+b1100010100000000 )
+1'
+#85000
+1!
+b1100101000000000 "
+b1100101000000000 ;
+1$
+#90000
+0$
+0'
+#95000
+0!
+1$
+#100000
+0$
+#105000
+1$
+#110000
+b100111010100000 /
+b10101000000 N
+b101010000000 Q
+b10011 R
+0.
+b10011 8
+b10011 O
+b1010100000 3
+b1010100000 P
+0M
+b10000000000 4
+b10000000000 F
+b10100 1
+b10100 J
+b10100 K
+b10000000000 5
+b10000000000 ?
+b10000000000 I
+b101000000 7
+b101000000 @
+b101000000 H
+b10 G
+b10000000000 A
+b10101000000 2
+b10101000000 >
+b10101000000 L
+b101000000 B
+b10011 D
+0=
+0<
+0$
+b100110000000000 &
+b100110000000000 *
+b100010100000000 %
+b100010100000000 )
+1'
+#115000
+1!
+b100111010100000 "
+b100111010100000 ;
+1$
+#120000
+0$
+0'
+#125000
+0!
+1$
+#130000
+0$
+#135000
+1$
+#140000
+10
+b111110000000000 /
+b11111111111 N
+b11110 R
+b111111111110 Q
+b11110 8
+b11110 O
+b1111111111 3
+b1111111111 P
+b0 A
+b11111111111 2
+b11111111111 >
+b11111111111 L
+b11111111111 B
+b11111111111 6
+b11111111111 E
+b11111 1
+b11111 J
+b11111 K
+b0 5
+b0 ?
+b0 I
+b11111111111 7
+b11111111111 @
+b11111111111 H
+b1011 G
+b11110 C
+0$
+b111101111111111 %
+b111101111111111 )
+1'
+#145000
+1#
+1!
+b111110000000000 "
+b111110000000000 ;
+1$
+#150000
+0$
+0'
+#155000
+0!
+1$
+#160000
+0$
+#165000
+1$
+#170000
+b10100000000 N
+b10100000000 2
+b10100000000 >
+b10100000000 L
+b10100000000 B
+b111110000000000 /
+b10001 R
+b101000000000 Q
+10
+b10001 8
+b10001 O
+b1010000000 3
+b1010000000 P
+b0 4
+b0 F
+b10100000000 6
+b10100000000 E
+b10010 1
+b10010 J
+b10010 K
+b10100000000 7
+b10100000000 @
+b10100000000 H
+b10001 G
+1,
+b0 D
+b10001 C
+0$
+b0 &
+b0 *
+b100010100000000 %
+b100010100000000 )
+1'
+#175000
+1!
+1$
+#180000
+0$
+0'
+#185000
+0!
+1$
+#190000
+0$
+#195000
+1$
+#200000
+b0 N
+b0 2
+b0 >
+b0 L
+b0 B
+b0 /
+b0 R
+b101000000000 Q
+00
+b0 8
+b0 O
+b0 3
+b0 P
+1+
+b0 6
+b0 E
+b1 1
+b1 J
+b1 K
+b0 7
+b0 @
+b0 H
+b0 G
+1-
+b0 C
+0$
+b0 %
+b0 )
+1'
+#205000
+0#
+1!
+b0 "
+b0 ;
+1$
+#210000
+0$
+0'
+#215000
+0!
+1$
+#220000
+0$
+#225000
+1$
+#230000
+0$
+#235000
+1$
+#240000
+0$
+#245000
+1$
+#250000
+0$
+#255000
+1$
+#260000
+0$
