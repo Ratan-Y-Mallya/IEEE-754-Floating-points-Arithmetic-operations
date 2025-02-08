@@ -51,65 +51,92 @@ module tb_adder_single_cycle;
         // Reset the system
         #10 rst = 0;
 
-        // Test Case 1: Add two normalized positive numbers
+        // Test Case 1: Basic positive numbers addition
         #10;
         i_valid = 1;
-        i_a = 16'b0100010100000000; // +5.0
-        i_b = 16'b0100001000000000; // +2.5
-        // Expected output: o_res = 0110011000000000 (+7.5), Overflow = 0
+        i_a = 16'b0100010100000000; // +5.0 (sign=0, exp=8, mantissa=5.0)
+        i_b = 16'b0100001000000000; // +2.0 (sign=0, exp=8, mantissa=2.0)
         #10 i_valid = 0;
-
-        // Test Case 2: Add a positive and a negative number
         #20;
+
+        // Test Case 2: Different exponents
+        i_valid = 1;
+        i_a = 16'b0100011000000000; // +8.0 (sign=0, exp=8, mantissa=8.0)
+        i_b = 16'b0011110000000000; // +1.0 (sign=0, exp=7, mantissa=1.0)
+        #10 i_valid = 0;
+        #20;
+
+        // Test Case 3: Subtraction (positive - negative)
         i_valid = 1;
         i_a = 16'b0100010100000000; // +5.0
-        i_b = 16'b1100001000000000; // -2.5
-        // Expected output: o_res = 0100001000000000 (+2.5), Overflow = 0
+        i_b = 16'b1100001000000000; // -2.0
         #10 i_valid = 0;
-
-        // Test Case 3: Add two negative numbers
         #20;
+
+        // Test Case 4: Numbers requiring normalization
         i_valid = 1;
-        i_a = 16'b1100010100000000; // -5.0
-        i_b = 16'b1100001000000000; // -2.5
-        // Expected output: o_res = 1110011000000000 (-7.5), Overflow = 0
+        i_a = 16'b0011110000010000; // 1.001
+        i_b = 16'b0011110000100000; // 1.002
         #10 i_valid = 0;
-
-        // Test Case 4: Add numbers with different exponents
         #20;
+
+        // Test Case 5: Overflow test
+        i_valid = 1;
+        i_a = 16'b0111101111111111; // Max normal number
+        i_b = 16'b0100110000000000; // Large positive
+        #10 i_valid = 0;
+        #20;
+
+        // Test Case 6: Addition with large exponent difference
+        i_valid = 1;
+        i_a = 16'b0101010100000000; // Large exponent
+        i_b = 16'b0011010100000000; // Small exponent
+        #10 i_valid = 0;
+        #20;
+
+        // Test Case 7: Equal magnitude opposite signs
         i_valid = 1;
         i_a = 16'b0100010100000000; // +5.0
-        i_b = 16'b0100110000000000; // +48.0
-        // Expected output: o_res = 0100110010100000 (+53.0), Overflow = 0
+        i_b = 16'b1100010100000000; // -5.0
         #10 i_valid = 0;
-
-        // Test Case 5: Overflow occurs
         #20;
-        i_valid = 1;
-        i_a = 16'b0111101111111111; // Maximum positive value (~65504.0)
-        i_b = 16'b0100110000000000; // +48.0
-        // Expected output: o_res = Undefined, Overflow = 1
-        #10 i_valid = 0;
 
-        // Test Case 6: Add zero to a number
-        #20;
+        // Test Case 8: Zero plus number
         i_valid = 1;
         i_a = 16'b0100010100000000; // +5.0
         i_b = 16'b0000000000000000; // 0.0
-        // Expected output: o_res = 0100010100000000 (+5.0), Overflow = 0
         #10 i_valid = 0;
-
-        // Test Case 7: Both inputs are zero
         #20;
+
+        // Test Case 9: Both zeros
         i_valid = 1;
         i_a = 16'b0000000000000000; // 0.0
         i_b = 16'b0000000000000000; // 0.0
-        // Expected output: o_res = 0000000000000000 (0.0), Overflow = 0
         #10 i_valid = 0;
+        #20;
+
+        // Test Case 10: Both negative numbers
+        i_valid = 1;
+        i_a = 16'b1100010100000000; // -5.0
+        i_b = 16'b1100001000000000; // -2.0
+        #10 i_valid = 0;
+        #20;
+
+        // Test Case 11: Close to overflow
+        i_valid = 1;
+        i_a = 16'b0111101000000000; // Very large positive
+        i_b = 16'b0111100000000000; // Large positive
+        #10 i_valid = 0;
+        #20;
+
+        // Test Case 12: Small numbers addition
+        i_valid = 1;
+        i_a = 16'b0000110000000000; // Very small positive
+        i_b = 16'b0000110000000000; // Very small positive
+        #10 i_valid = 0;
+        #20;
 
         // End simulation
-        #50;
-        $finish;
+        #50 $finish;
     end
-
-endmodule
+    endmodule

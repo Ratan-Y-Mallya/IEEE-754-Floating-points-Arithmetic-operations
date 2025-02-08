@@ -9,7 +9,7 @@ module addition_s (
     output  [13:0] mantisa_out;
     
 
-    wire [12:0] Mantisa_w1,Mantisa_w2 ;
+    wire [13:0] Mantisa_w1,Mantisa_w2 ;
    assign Mantisa_w1 = sign1 ? (-mantisa1): mantisa1;
    assign Mantisa_w2 = sign2 ? (-mantisa2): mantisa2;
 

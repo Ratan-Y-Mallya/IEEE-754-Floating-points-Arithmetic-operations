@@ -25,16 +25,18 @@ module compare_and_shift (
         if (exp1 > exp2) begin
             mantisa1_new = mantisa1;              
             mantisa2_new = mantisa2 >> exp_dif;   
-            new_exp = exp1+8'd1;                        
+            new_exp = exp1;                        
         end else if (exp1 < exp2) begin
             mantisa1_new = mantisa1 >> exp_dif;   
             mantisa2_new = mantisa2;             
-            new_exp = exp2+8'd1;                 
+            new_exp = exp2;                 
         end else begin
             mantisa1_new = mantisa1;              
             mantisa2_new = mantisa2;              
-            new_exp = exp1+8'd1;                   
+            new_exp = exp1;                   
         end
     end
 
 endmodule
+
+
